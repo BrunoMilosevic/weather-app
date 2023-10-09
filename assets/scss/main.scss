@@ -1,0 +1,203 @@
+@import "./node_modules/bootstrap/scss/bootstrap.scss";
+@import "./variables.scss";
+body {
+  font-family: $font-family;
+  background-color: rgb(232, 228, 228);
+  color: #434141;
+  margin: 0;
+  padding: 0;
+}
+
+.active {
+  color: #8593a7 !important;
+}
+a {
+  text-decoration: none;
+}
+.navbar {
+  .container-fluid {
+    .navbar-brand {
+      font-weight: 700;
+    }
+  }
+}
+.navbar-nav {
+  a {
+    margin-left: 20px;
+    font-size: 1.125em;
+    font-weight: 400;
+    color: #fff;
+    padding: 10px;
+  }
+}
+
+#input-vrijeme {
+  text-align: center;
+  &::placeholder {
+    text-align: center;
+  }
+}
+#input-voznja {
+  text-align: center;
+}
+
+.container {
+  .form-rounded {
+    border-radius: 2em;
+  }
+  .title {
+    font-weight: 700;
+  }
+  .city-name {
+    p,
+    span {
+      font-weight: 200;
+    }
+  }
+  .temp {
+    span {
+      font-weight: 100;
+      font-size: 5em;
+    }
+  }
+  .card-mid {
+    line-height: 0.5;
+    .condition-temp {
+      .condition {
+        line-height: 1em;
+        font-weight: 700;
+        text-transform: capitalize;
+      }
+      .high::before {
+        content: "";
+        background: url("/assets/images/up_arrow.svg") no-repeat;
+        height: 15px;
+        width: 15px;
+        display: inline-block;
+      }
+      .low::before {
+        content: "";
+        background: url("/assets/images/down_arrow.svg") no-repeat;
+        height: 15px;
+        width: 15px;
+        display: inline-block;
+      }
+    }
+  }
+  .vidljivost-ikonica {
+    width: 50px;
+  }
+  .card-bottom {
+    line-height: 0.5;
+    span {
+      font-size: 12px;
+    }
+    p {
+      font-size: 50px;
+      font-weight: 100;
+    }
+  }
+  #vremenski-karusel {
+    max-width: 100%;
+    overflow-x: hidden;
+    .carousel-inner {
+      .carousel-item {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        img {
+          width: 300px;
+          height: 300px;
+        }
+      }
+    }
+  }
+}
+#ploca-za-igranje {
+  width: 225px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+
+  .celija {
+    width: 75px;
+    height: 75px;
+    border: solid 2px #000;
+    box-sizing: border-box;
+    box-shadow: 0 0 0 2px;
+    line-height: 75px;
+    cursor: pointer;
+  }
+  #restart {
+    width: 40%;
+    cursor: pointer;
+  }
+}
+#dan-noc {
+  border-radius: 3% 97% 21% 79% / 73% 16% 84% 27%;
+  width: 50%;
+}
+.icon-container {
+  border-radius: 50%;
+  width: 10%;
+}
+#djecji-dio,
+.djecji {
+  background-color: #918f8f;
+  width: 100%;
+}
+
+ul {
+  li {
+    list-style: none;
+  }
+}
+.kako-nastaju-img {
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 600px) {
+  .card-body {
+    width: 100%;
+    .temp {
+      span {
+        font-weight: 100;
+        font-size: 40px;
+      }
+    }
+  }
+  #dan-noc {
+    width: 100%;
+  }
+  .carousel-caption {
+    h5 {
+      font-size: 12px;
+    }
+    p {
+      font-size: 9px;
+    }
+  }
+  .card-bottom {
+    .real-feel,
+    .humidity {
+      p {
+        font-size: 30px;
+      }
+    }
+  }
+  .izvor-wiki {
+    font-size: 0.8em;
+    display: inline-block;
+    text-decoration: none;
+    &:hover {
+      transform: scaleY(1.2);
+    }
+  }
+  #input-voznja,
+  #input-vrijeme {
+    &::placeholder {
+      font-size: 0.6em;
+      text-align: center;
+    }
+  }
+}

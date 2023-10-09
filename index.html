@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Vremenska Prognoza</title>
+    <!--Ikonica vremenske prognoze-->
+    <link rel="icon" type="image/x-icon" href="./assets/images/icon.png" />
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-primary navbar-dark sticky-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">METEOS</a>
+        <button
+          id="navbar-toggler"
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link" aria-current="page" href="#vremenska-prognoza"
+              >Vremenska Prognoza</a
+            >
+            <a class="nav-link sporedni" href="#povijest"
+              >Povijest Meteorologije</a
+            >
+            <a class="nav-link sporedni" href="#oluje">Kako nastaju oluje</a>
+            <a class="nav-link sporedni" href="#kise">Kako nastaju kiše</a>
+            <a class="nav-link sporedni" href="#gifovi"
+              >Najbolji Weather GIF-ovi s Reddita</a
+            >
+            <a class="nav-link sporedni" href="#vidljivost"
+              >Provjeri Vidljivost</a
+            >
+            <a class="nav-link sporedni" href="#djecji-kutak"
+              >Dječji kutak</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+    <h1 class="text-center title my-5 " id="vremenska-prognoza" >
+      Vremenska Prognoza
+    </h1>
+    <form action="" class="search-location">
+      <label for="input-vrijeme"></label>
+      <input
+        placeholder="Unesite grad za koji želite vidjeti prognozu"
+        type="text"
+        name="grad"
+        id="input-vrijeme"
+        class="form-control text-body-secondary form-rounded p-4 shadow-sm"
+      />
+    </form>
+    <div class="card rounded d-none my-3 shadow-lg back-card">
+      <div class="card-top text-center">
+        <div class="city name my-3">
+          <p id="city-name">Zagreb</p>
+          <span>...</span>
+        </div>
+        <img class="col-12" id="dan-noc" src="./assets/images/image_night.svg" alt="" />
+      </div>
+      <div class="card-body">
+        <div class="card-mid row">
+          <div class="col-6 text-center temp">
+            <span>30&deg;C</span>
+          </div>
+          <div class="col-6 condition-temp">
+            <p class="condition">Grmljavinsko nevrijeme</p>
+            <p class="high">30&deg;C</p>
+            <p class="low">23&deg;C</p>
+          </div>
+          
+          
+            <img src="#" id="vremenska-ikonica" alt="ikonica za vremensku prognozu" />
+          
+          <div class="card-bottom px-5 py-4 row">
+            <div class="col text-center real-feel">
+              <p>&deg;C</p>
+              <span>Pravi Osjećaj</span>
+            </div>
+            <div class="col text-center humidity">
+              <p></p>
+              <span>Vlažnost</span>
+            </div>
+          </div>
+          `;
+        </div>
+      </div>
+    </div>
+    <div class="container my-5">
+      
+      <div class="row ">
+        <div class="col-12 text-center my-5">
+          <h2 id="povijest">Povijest Meteorologije</h2>
+        </div>
+      </div>
+      <div class="accordion" id="rijec">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#rijec-meteo"
+              class="accordion-collapse collapse show"
+              data-bs-parent="#rijec"
+            >
+              Riječ Meteorologija
+            </button>
+          </h2>
+          <div
+            id="rijec-meteo"
+            class="accordion-collapse collapse show"
+            data-bs-parent="#rijec"
+          >
+            <div class="accordion-body">
+              Riječ <strong>meteorologija</strong> potječe od grčke
+              riječi<strong> meteoron</strong> koja se odnosila na sve pojave na
+              nebu. Zanimanje čovjeka za vrijeme koje ga okružuje postojalo je
+              otkad i sam čovjek. Već u staroj Kini, Indiji, Egiptu i Grčkoj
+              ljudi su raspravljali o vjetrovima i oborinama te pokušavali
+              shvatiti i objasniti te vremenske pojave. Prva knjiga s opisom i
+              tumačenjem vremenskih pojava je Aristotelova Meteorologica (340.
+              g. prije Krista).
+              <p>
+                <em
+                  >Izvor:
+                  <a target="_blank" rel="noopener"
+                    class="izvor-wiki"
+                    href="https://hr.wikipedia.org/wiki/Meteorologija"
+                    >https://hr.wikipedia.org/wiki/Meteorologija</a
+                  ></em
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item" id="povijest">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#povijest-meteo"
+              class="accordion-collapse collapse show"
+              data-bs-parent="#rijec"
+            >
+              Kratka Povijest Meteorologije
+            </button>
+          </h2>
+          <div
+            id="povijest-meteo"
+            class="accordion-collapse collapse show"
+            data-bs-parent="#povijest"
+          >
+            <div class="accordion-body">
+              Početci meteorologije leže u promatranju trenutačnog vremena i
+              nagađanja kakvo bi ono moglo biti u vrlo bliskoj budućnosti.
+              Aristotelov nauk i njegova Meteorologica bili su u antici i
+              srednjem vijeku vrlo cijenjeni i zapravo jedini koliko-toliko
+              znanstveni meteorološki temelji.
+              <br />
+              Tako je bilo sve dok R. Descartes, G. Galilei i ostali nisu
+              nagađanja počeli mijenjati instrumentalnim promatranjima početkom
+              17. stoljeća.
+              <br />
+              Prva meteorološka mjerenja pomoću mjernih instrumenata započeli su
+              Galilejevi učenici (1645.) u Firentinskoj akademiji. U 18.
+              stoljeću razvijaju se fizikalne znanosti, posebno termodinamika.
+              G. D. Fahrenheit i A. Celsius uvode ljestvice na termometrima, a
+              J. Black doprinosi teorijskom razvoju meteorologije jasnim
+              razlučivanjem pojmova temperature i topline.
+              <br />
+              U 19. stoljeću uvodi se u meteorologiju sinoptička metoda, to jest
+              istodobno promatranje stanja atmosfere na velikom području.
+              <br />
+              Poslije Drugog svjetskog rata, zahvaljujući velikom proširenju
+              mreže prizemnih i aeroloških stanica, rezultatima opsežnih
+              teorijskih istraživanja i upotrebi elektroničkih računala,
+              omogućena je primjena numeričkih modela za prognozu vremena.
+              <p>
+                <em
+                  >Izvor:
+                  <a target="_blank" rel="noopener"
+                    class="izvor-wiki"
+                    href="https://hr.wikipedia.org/wiki/Meteorologija"
+                    >https://hr.wikipedia.org/wiki/Meteorologija</a
+                  ></em
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row" >
+        <div class="col-12 text-center my-5" >
+          <h2 id="oluje">Kako Nastaju Oluje</h2>
+        </div>
+        <div class="col-12 my-3">
+          Oluje (zone niskog pritiska / Cikloni) nastaju u Intertropskoj zoni
+          konvergencije, odnosno, kada hladna fronta presječe toplu. Zračna masa
+          se zagrijava, okreće i na kraju ostaje zarobljena u njoj.
+          <div class="col-12 text-center"><figure class="figure my-4 rounded text-center ">
+            <img
+              src="./assets/images/slika_oluje.webp"
+              class="img-fluid "
+              alt="Slika Oluje nad Zagrebom"
+            />
+
+            <figcaption class="figure-caption text-center">
+              Slika oluje iznad Zagreba
+            </figcaption>
+          </figure></div>
+          <div class="col-12 text-center"> <figure class="figure my-4 rounded text-center">
+            <img
+              src="./assets/images/kreiranje_oluje.webp"
+              class="img-fluid "
+              alt="kako nastaje oluja GIF"
+            />
+
+            <figcaption class="figure-caption">Kako nastaje oluja</figcaption>
+          </figure></div>
+         
+        </div>
+      </div>
+      <div class="row text-center">
+        <div class="col-12 text-center my-5">
+          <h2 id="kise">Kako Nastaju Kiše</h2>
+        </div>
+        <div class="col-12">
+          Kiša su kapljice vode koje su se kondenzirale iz atmosferske vodene
+          pare, a zatim padaju pod gravitacijom, to je vid atmosferskih
+          padavina, kao što su snijeg, grad i rose. Kiša nastaje kada kapi vode
+          padaju na zemlju iz oblaka. Kiša ima veliku ulogu u hidrološkom krugu
+          u kome vlaga iz okeana isparava, kondenzuje se u oblacima, pada nazad
+          na Zemlju i vraća se u okean putem rijeka i potoka da bi započela novi
+          ciklus. Osigurava vodu za hidroelektrane, navodnjavanje usjeva i
+          pogodne uslove za mnoge vrste ekosistema.
+        </div>
+        <div class="col-12 text-center">
+          <figure class="figure my-4 rounded float-center">
+            <img
+              src="./assets/images/formiranje_kise.gif"
+              class="img-fluid"
+              alt="Kako nastaje kiša"
+            />
+
+            <figcaption class="figure-caption">
+              Kako nastaje kiša
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+        <div class="row text-center my-5 full-width">
+          
+            <h2 id="gifovi" class="my-5">Najbolji "Weather" GIF-ovi s Reddita</h2>
+          
+          <div class="col-12">
+            <div id="vremenski-karusel" class="carousel slide">
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#vremenski-karusel"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#vremenski-karusel"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#vremenski-karusel"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="./assets/images/supercell.gif"
+                    class="d-block w-100 img-fluid"
+                    alt="formiranje super ćelije"
+                  />
+                  <div class="carousel-caption d-md-block">
+                    <h5>Formiranje Superćelije</h5>
+                    <p>Dijelo lovca na oluje Mike-a Oblinskog</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="./assets/images/formiranje_oluje.gif"
+                    class="d-block w-100 img-fluid"
+                    alt="formiranje oluje"
+                  />
+                  <div class="carousel-caption d-md-block">
+                    <h5>Formiranje Oluje</h5>
+                    <p>Dijelo Nepoznatog Autora</p>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="./assets/images/tuca_australia.gif"
+                    class="d-block w-100 img-fluid"
+                    alt="tuča u Australiji"
+                  />
+                  <div class="carousel-caption d-md-block">
+                    <h5>Prikaz tuče u Australiji</h5>
+                    <p>
+                      Dijelo "u/travelator"
+                      <a
+                        href="https://www.reddit.com/r/gifs/comments/2nk6ch/biggest_hail_storm_i_have_ever_witanessed_complete/" target="_blank" rel="noopener"
+                        >reddit.com</a
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#vremenski-karusel"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#vremenski-karusel"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      
+      <div class="row text-center container-fluid">
+        <div class="col-12 text-center my-5">
+          <h2 id="vidljivost">Ideš na put? Provjeri vidljivost</h2>
+          <p>Ispod provjeri vidljivost prije puta</p>
+        </div>
+        <div class="col-12 text-center mb-5">
+          <form action="" class="search-voznja">
+            <input
+              placeholder="Unesite grad za koji želite vidjeti vidljivost"
+              type="text"
+              name=""
+              id="input-voznja"
+              class="form-control text-body-secondary form-rounded p-4 shadow-sm"
+            />
+          </form>
+          <div class="card rounded card-voznja d-none my-3 shadow-lg back-card align-items-center">
+            <div class="card-top text-center">
+              <div class="city name my-3">
+                <p id="city-name-voznja">Zagreb</p>
+                <span >...</span>
+              </div>
+              
+            </div>
+            
+            <img class="col-12 vidljivost-ikonica " src="" alt=""/>
+            <p class="tekst-za-vidljivost"></p>
+            </div>
+            
+        </div>
+      </div>
+     
+      
+        
+      </div>
+      <div class="text-center" id="djecji-dio">
+        <h2 id="djecji-kutak" class="my-5 py-3">Dječji Kutak</h2>
+        
+          <div class="col-12 djecji text-center">
+            <div id="ploca-za-igranje">
+              <div indeksCelije="0" class="celija"></div>
+              <div indeksCelije="1" class="celija"></div>
+              <div indeksCelije="2" class="celija"></div>
+              <div indeksCelije="3" class="celija"></div>
+              <div indeksCelije="4" class="celija"></div>
+              <div indeksCelije="5" class="celija"></div>
+              <div indeksCelije="6" class="celija"></div>
+              <div indeksCelije="7" class="celija"></div>
+              <div indeksCelije="8" class="celija"></div>
+            </div>
+            <p id="informacije"></p>
+            <button type="button" id="restart" class="btn btn-primary btn-sm p-3 mb-5 ">Ponovno Pokreni Igricu</button>
+          </div>
+          
+        </div>
+      
+    
+    
+
+    <footer class="text-white text-center bg-primary">
+      
+      <div class="container p-4 text-center ">
+        
+        <div class="row mt-4">
+          
+          <div class="col-12">
+            <h5 >O NAMA</h5>
+    
+            <p>
+             Meteos je meteorološka postaja koja je napravljena kao projektni zadatak za tečaj Web Programiranje u ustanovi "Dante" u rijeci
+            </p>
+    
+            
+    
+            <div class="mt-4">
+              
+              <a type="button" class="btn btn-floating btn-primary btn-lg"><i class="fab fa-facebook-f"></i></a>
+              
+              <a type="button" class="btn btn-floating btn-primary btn-lg"><i class="fab fa-dribbble"></i></a>
+              
+              <a type="button" class="btn btn-floating btn-primary btn-lg"><i class="fab fa-twitter"></i></a>
+              
+              <a type="button" class="btn btn-floating btn-primary btn-lg"><i class="fab fa-google-plus-g"></i></a>
+              
+            </div>
+          </div>
+          
+          
+    
+            <ul class="fa-ul">
+              <li class="mb-3">
+                <span class="fa-li"></span><span class="ms-2">Izmišljena Ulica, 51000 Rijeka</span>
+              </li>
+              <li class="mb-3">
+                <span class="fa-li"></span><span class="ms-2">meteos@meteos.com</span>
+              </li>
+              <li class="mb-3">
+                <span class="fa-li"></span><span class="ms-2">+38551222333</span>
+              </li>
+              
+            </ul>
+          </div>
+        
+          <div class="col-12 text-center d-flex flex-column align-items-center justify-content-center   ">
+            <h5 class="text-uppercase mb-4">Radno Vrijeme</h5>
+    
+            <table class="table-light text-center text-white">
+              <tbody class="font-weight-normal bg-primary ">
+                <tr>
+                  <td>Pon - Pet:</td>
+                  <td>0 - 24</td>
+                </tr>
+                <tr>
+                  <td>Sub:</td>
+                  <td>0-24</td>
+                </tr>
+                <tr>
+                  <td>Ned</td>
+                  <td>0-24</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
+        </div>
+       
+      </div>
+      
+    
+     
+     
+    </footer>
+    
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="./assets/js/main.js" type="module" defer></script>
+    <script src="./assets/js/tic_tac_toe.js"></script>
+
+  </body>
+</html>
